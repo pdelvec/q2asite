@@ -151,7 +151,7 @@ else
             // attacklab: Replace $ with ~D
             // RegExp interprets $ as a special character
             // when it's in a replacement string
-            text = text.replace(/\$/g, "~D");
+			//PDELVEC EDIT text = text.replace(/\$/g, "~D");
 
             // Standardize line endings
             text = text.replace(/\r\n/g, "\n"); // DOS to Unix
@@ -180,7 +180,7 @@ else
             text = _UnescapeSpecialChars(text);
 
             // attacklab: Restore dollar signs
-            text = text.replace(/~D/g, "$$");
+            //PDELVEC EDIT text = text.replace(/~D/g, "$$");
 
             // attacklab: Restore tildes
             text = text.replace(/~T/g, "~");
@@ -1051,7 +1051,7 @@ else
             return text;
         }
 
-        function _DoItalicsAndBold(text) {
+        /**function _DoItalicsAndBold(text) {
 
             // <strong> must go first:
             text = text.replace(/([\W_]|^)(\*\*|__)(?=\S)([^\r]*?\S[\*_]*)\2([\W_]|$)/g,
@@ -1061,7 +1061,7 @@ else
             "$1<em>$3</em>$4");
 
             return text;
-        }
+        }**/
 
         function _DoBlockQuotes(text) {
 
